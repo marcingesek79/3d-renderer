@@ -4,7 +4,7 @@ project("3d-renderer" LANGUAGES CXX)
 find_package(Boost REQUIRED)
 find_package(SFML COMPONENTS system window graphics REQUIRED)
 
-add_executable(3d-renderer "src/main.cpp" "src/window.cpp" )
+add_executable(3d-renderer "src/main.cpp" "src/window.cpp" "src/renderer.cpp")
 
 target_compile_features(3d-renderer PUBLIC cxx_std_14)
 

@@ -12,7 +12,7 @@ struct Point3D
 	friend std::ostream& operator<<(std::ostream& os, const Point3D& obj);
 };
 
-std::ostream& operator<<(std::ostream& os, const Point3D& obj)
+inline std::ostream& operator<<(std::ostream& os, const Point3D& obj)
 {
 	os << "(" << obj.x << ", " << obj.y << ", " << obj.z << ")";
 	return os;
@@ -29,7 +29,7 @@ struct Triangle
 	friend std::ostream& operator<<(std::ostream& os, const Triangle& obj);
 };
 
-std::ostream& operator<<(std::ostream& os, const Triangle& obj)
+inline std::ostream& operator<<(std::ostream& os, const Triangle& obj)
 {
 	os << "[" << obj.a << ", " << obj.b << ", " << obj.c << "]";
 	return os;

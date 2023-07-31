@@ -1,4 +1,5 @@
 ﻿#include "window.hpp"
+#include "models.hpp"
 
 int main()
 {
@@ -6,7 +7,8 @@ int main()
 	const uint32_t HEIGHT{ 720 };
 	const std::string TITLE{ "3D Renderer" };
 
-	Window window{ WIDTH, HEIGHT, TITLE };
+	Renderer renderer{ Models::Cube3D };
+	Window window{ WIDTH, HEIGHT, TITLE, renderer };
 	window.run();
 
 	return EXIT_SUCCESS;
