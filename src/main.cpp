@@ -1,5 +1,5 @@
-﻿#include "window.hpp"
-#include "models.hpp"
+﻿#include "models.hpp"
+#include "renderer.hpp"
 
 int main()
 {
@@ -7,9 +7,22 @@ int main()
 	const uint32_t HEIGHT{ 720 };
 	const std::string TITLE{ "3D Renderer" };
 
-	Renderer renderer{ Models::Cube3D };
-	Window window{ WIDTH, HEIGHT, TITLE, renderer };
-	window.run();
+	sf::RenderWindow window{ sf::VideoMode{ WIDTH, HEIGHT }, TITLE };
+	Renderer renderer{ window };
 
+	while (window.isOpen())
+	{
+		sf::Event event{};
+		while (window.pollEvent(event))
+		{
+			if (event.type == sf::Event::Closed)
+				window.close();
+		}
+
+		window.clear();
+		renderer.render(Models::Cube3D);
+		window.display();
+	}
+	
 	return EXIT_SUCCESS;
 }

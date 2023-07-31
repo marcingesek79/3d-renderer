@@ -1,33 +1,22 @@
 #pragma once
 #include <iostream>
+#include <SFML/System/Vector3.hpp>
 
-struct Point3D
+struct Triangle
 {
-	double x, y, z;
-	constexpr Point3D(double x, double y, double z) noexcept
-		: x{ x }, y{ y }, z{ z }
+	sf::Vector3f a, b, c;
+
+	Triangle(sf::Vector3f a, sf::Vector3f b, sf::Vector3f c) noexcept
+		: a{ a }, b{ b }, c{ c }
 	{
 	}
-
-	friend std::ostream& operator<<(std::ostream& os, const Point3D& obj);
 };
 
-inline std::ostream& operator<<(std::ostream& os, const Point3D& obj)
+inline std::ostream& operator<<(std::ostream& os, const sf::Vector3f& obj)
 {
 	os << "(" << obj.x << ", " << obj.y << ", " << obj.z << ")";
 	return os;
 }
-
-struct Triangle
-{
-	Point3D a, b, c;
-	constexpr Triangle(Point3D a, Point3D b, Point3D c) noexcept
-		: a{ a }, b{ b }, c{ c }
-	{
-	}
-
-	friend std::ostream& operator<<(std::ostream& os, const Triangle& obj);
-};
 
 inline std::ostream& operator<<(std::ostream& os, const Triangle& obj)
 {

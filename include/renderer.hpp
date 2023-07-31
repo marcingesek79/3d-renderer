@@ -1,12 +1,14 @@
 #pragma once
 #include <vector>
+#include <SFML/Graphics.hpp>
 #include "types.hpp"
 
 class Renderer
 {
-private:
-	std::vector<Triangle> model;
+	sf::RenderWindow& window;
+
+	void drawTriangle(Triangle triangle) const noexcept;
 public:
-	Renderer(const std::vector<Triangle>& model) noexcept;
-	void print() const noexcept;
+	explicit Renderer(sf::RenderWindow& window) noexcept;
+	void render(const std::vector<Triangle>& model) const noexcept;
 };
