@@ -1,4 +1,4 @@
-#include "../include/window.hpp"
+#include "window.hpp"
 
 Window::Window(uint32_t width, uint32_t height, const std::string& title) noexcept
 	: width{ width }, height{ height }, title{ title }, window { sf::VideoMode{width, height}, title }
@@ -10,6 +10,8 @@ void Window::run() noexcept
 	while (this->window.isOpen())
 	{
 		sf::Event event{};
+
+		// TODO: event handler method
 		while (this->window.pollEvent(event))
 		{
 			if (event.type == sf::Event::Closed)
