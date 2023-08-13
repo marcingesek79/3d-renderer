@@ -20,7 +20,7 @@ int main()
 		}
 
 		window.clear();
-		renderer.render(Models::Cube3D);
+		renderer.render(models::Cube3D);
 		window.display();
 	}
 	
