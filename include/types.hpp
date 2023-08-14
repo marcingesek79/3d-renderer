@@ -4,6 +4,24 @@
 #include <array>
 #include <vector>
 
+enum class RotationDirection
+{
+	NONE = 0,
+	X,
+	Y
+};
+
+struct Rotation
+{
+	RotationDirection dir;
+	float speed;
+};
+
+struct Camera
+{
+	float x, y, z;
+};
+
 struct Triangle
 {
 	sf::Vector3f a, b, c;
@@ -49,3 +67,15 @@ inline std::ostream& operator<<(std::ostream& os, const Matrix<SIZE>& obj)
 	}
 	return os;
 }
+
+struct Entity
+{
+	std::vector<Triangle> model;
+	Rotation rotation;
+	sf::Vector3f position;
+
+	Entity(std::vector<Triangle> model, Rotation rotation, sf::Vector3f position) noexcept
+		: model{model}, rotation{rotation}, position{position}
+	{
+	}
+};

@@ -8,9 +8,8 @@ namespace utils
 	constexpr auto Z_NEAR = 0.1f;
 	constexpr auto Z_FAR = 1000.0f;
 
-	constexpr auto CAMERA_X_OFFSET = -0.5f;
-	constexpr auto CAMERA_Y_OFFSET = -0.5f;
-	constexpr auto CAMERA_Z_OFFSET = 3.0f;
+	constexpr auto CAMERA_Z_OFFSET = 3.25f;
+	constexpr auto CAMERA_Y_OFFSET = -1.0f;
 
 	[[nodiscard]] static auto toRadians(float angle) noexcept -> float
 	{
@@ -25,10 +24,10 @@ namespace utils
 
 		std::vector<float> output_vec{};
 
-		for (size_t i{}; i < vec.size(); i++)
+		for (size_t i{}; i < SIZE; i++)
 		{
 			float sum{};
-			for (size_t j{ }; j < SIZE; j++)
+			for (size_t j{ }; j < vec.size(); j++)
 			{
 				sum += vec.at(j) * matrix.get(j, i);
 			}
