@@ -10,6 +10,8 @@ int main()
 	sf::RenderWindow window{ sf::VideoMode{ WIDTH, HEIGHT }, TITLE };
 	Renderer renderer{ window };
 
+	sf::Vector3f camera{ 0.0f, 0.0f, 0.0f };
+
 	while (window.isOpen())
 	{
 		sf::Event event{};
@@ -20,7 +22,7 @@ int main()
 		}
 
 		window.clear();
-		renderer.render(models::Cube3D);
+		renderer.render(models::Cube3D, camera);
 		window.display();
 	}
 	

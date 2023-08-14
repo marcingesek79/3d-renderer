@@ -6,9 +6,9 @@
 
 struct Triangle
 {
-	sf::Vector3<float> a, b, c;
+	sf::Vector3f a, b, c;
 
-	Triangle(sf::Vector3<float> a, sf::Vector3<float> b, sf::Vector3<float> c) noexcept
+	Triangle(sf::Vector3f a, sf::Vector3f b, sf::Vector3f c) noexcept
 		: a{ a }, b{ b }, c{ c }
 	{
 	}
@@ -24,7 +24,7 @@ public:
 	[[nodiscard]] auto get(size_t i, size_t j) const noexcept -> float { return matrix[i][j]; }
 };
 
-inline std::ostream& operator<<(std::ostream& os, const sf::Vector3<float>& obj)
+inline std::ostream& operator<<(std::ostream& os, const sf::Vector3f& obj)
 {
 	os << "(" << obj.x << ", " << obj.y << ", " << obj.z << ")";
 	return os;

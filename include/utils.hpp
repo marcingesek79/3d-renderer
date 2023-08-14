@@ -1,12 +1,16 @@
 #pragma once
 #include "types.hpp"
 
-namespace calc
+namespace utils
 {
 	constexpr auto PI = 3.14159265f;
 	constexpr auto FOV = 90.0f;
 	constexpr auto Z_NEAR = 0.1f;
 	constexpr auto Z_FAR = 1000.0f;
+
+	constexpr auto CAMERA_X_OFFSET = -0.5f;
+	constexpr auto CAMERA_Y_OFFSET = -0.5f;
+	constexpr auto CAMERA_Z_OFFSET = 3.0f;
 
 	[[nodiscard]] static auto toRadians(float angle) noexcept -> float
 	{
